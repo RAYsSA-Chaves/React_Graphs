@@ -1,6 +1,6 @@
 import { useState} from "react";
 import GraficoAlunosAtivos from "../../components/graficoAlunosAtivos/graficoAlunosAtivos";
-import GraficoAlunosDesligados from "../../components/graficoAlunosDesligados/graficoDesligados";
+import GraficoAlunosDesligados from "../../components/graficoAlunosDesligados/graficoAlunosDesligados";
 import FiltroAlunos from "../../components/filtroAlunos";
 import FiltroDesligados from "../../components/filtroDesligados";
 import dadosAlunos from "../../data/dadosAlunos";

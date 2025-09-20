@@ -1,0 +1,24 @@
+.botaoVerde, .botaoAzul {
+    margin-top: 1rem;
+    color: #fff;
+    padding: 12px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.botaoAzul {
+    background-color: var(--lightBlue);
+}
+
+.botaoVerde {
+    background-color: var(--lightTurquoise);
+}
+
+.botaoAzul:hover {
+    background-color: var(--darkBlue);
+}
+
+.botaoVerde:hover {
+    background-color: var(--darkTurquoise);
+}

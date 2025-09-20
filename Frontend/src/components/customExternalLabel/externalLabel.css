@@ -1,0 +1,15 @@
+.externalLabel {
+    animation: aparecerBonito 2s cubic-bezier(0.25, 0.1, 0.25) 0.4s both;
+    opacity: 0;
+}
+
+@keyframes aparecerBonito {
+    0% {
+        opacity: 0;
+        transform: translateY(20px) scale(0.98s);
+    }
+    100% {
+        opactity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
