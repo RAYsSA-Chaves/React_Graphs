@@ -34,12 +34,12 @@ const dadosAlunos = [
     // Mecatrônica - Turma A
     { nome: "Aline Oliveira", unidade: "Unidade Leste", curso: "Mecatrônica", turma: "Turma A", professor: "Dorival Júnior", ativo: true },
     { nome: "Thiago Nunes", unidade: "Unidade Leste", curso: "Mecatrônica", turma: "Turma A", professor: "Dorival Júnior", ativo: false },
-    { nome: "Bruna Silva", unidade: "Dorival Júnior", curso: "Mecatrônica", turma: "Turma A", professor: "Dorival Júnior", ativo: true },
+    { nome: "Bruna Silva", unidade: "Unidade Leste", curso: "Mecatrônica", turma: "Turma A", professor: "Dorival Júnior", ativo: true },
 
     // Unidade Oeste
     // Desenvolvimento de Sistemas - Turma A
     { nome: "Mariana Souza", unidade: "Unidade Oeste", curso: "Desenvolvimento de Sistemas", turma: "Turma A", professor: "Gustavo Guanabara", ativo: true },
-    { nome: "Gabriel Costa", unidade: "Unidade Oeste", curso: "Desenvolvimento de Sistemas", turma: "Turma A", professor: "MGustavo Guanabara", ativo: false },
+    { nome: "Gabriel Costa", unidade: "Unidade Oeste", curso: "Desenvolvimento de Sistemas", turma: "Turma A", professor: "Gustavo Guanabara", ativo: false },
     { nome: "Rodrigo Ramos", unidade: "Unidade Oeste", curso: "Desenvolvimento de Sistemas", turma: "Turma A", professor: "Gustavo Guanabara", ativo: true },
 
     // Administração - Turma A
@@ -84,14 +84,14 @@ const dadosAlunos = [
     { nome: "Diego Freitas", unidade: "Unidade Centro", curso: "Banco de Dados", turma: "Turma B", professor: "Márcia Scanacapra", ativo: true },
 
     // Front - Turma A
-    { nome: "Miguel Diaz", unidade: "Unidade Centro", curso: "Desenvolvimento FrontEnd", turma: "Turma C", professor: "Maria Angela Antunes", ativo: true },
-    { nome: "Flávia Araújo", unidade: "Unidade Centro", curso: "Desenvolvimento FrontEnd", turma: "Turma C", professor: "Maria Angela Antunes", ativo: false },
-    { nome: "Miguel Massaki", unidade: "Unidade Centro", curso: "Desenvolvimento FrontEnd", turma: "Turma C", professor: "Maria Angela Antunes", ativo: true },
+    { nome: "Miguel Diaz", unidade: "Unidade Centro", curso: "Desenvolvimento FrontEnd", turma: "Turma A", professor: "Maria Angela Antunes", ativo: true },
+    { nome: "Flávia Araújo", unidade: "Unidade Centro", curso: "Desenvolvimento FrontEnd", turma: "Turma A", professor: "Maria Angela Antunes", ativo: false },
+    { nome: "Miguel Massaki", unidade: "Unidade Centro", curso: "Desenvolvimento FrontEnd", turma: "Turma A", professor: "Maria Angela Antunes", ativo: true },
 
     // Front - Turma B
-    { nome: "Isabelly Viana", unidade: "Unidade Centro", curso: "Desenvolvimento FrontEnd", turma: "Turma C", professor: "Gustavo Guanabara", ativo: true },
-    { nome: "Samuel Teixeira", unidade: "Unidade Centro", curso: "Desenvolvimento FrontEnd", turma: "Turma C", professor: "Gustavo Guanabara", ativo: true },
-    { nome: "Henrique Monteiro", unidade: "Unidade Centro", curso: "Desenvolvimento FrontEnd", turma: "Turma C", professor: "Gustavo Guanabara", ativo: true },
+    { nome: "Isabelly Viana", unidade: "Unidade Centro", curso: "Desenvolvimento FrontEnd", turma: "Turma B", professor: "Gustavo Guanabara", ativo: true },
+    { nome: "Samuel Teixeira", unidade: "Unidade Centro", curso: "Desenvolvimento FrontEnd", turma: "Turma B", professor: "Gustavo Guanabara", ativo: true },
+    { nome: "Henrique Monteiro", unidade: "Unidade Centro", curso: "Desenvolvimento FrontEnd", turma: "Turma B", professor: "Gustavo Guanabara", ativo: true },
 
     // Front - Turma C
     { nome: "Carolina Reis", unidade: "Unidade Centro", curso: "Desenvolvimento FrontEnd", turma: "Turma C", professor: "Gustavo Guanabara", ativo: true },
@@ -109,9 +109,9 @@ const dadosAlunos = [
     { nome: "Fábio Oliveira", unidade: "Unidade Centro", curso: "UI/UX", turma: "Turma A", professor: "Cleonice Siqueira", ativo: true },
 
     // IoT - Turma A
-    { nome: "Paulo Andrade", unidade: "Unidade Centro", curso: "IoT", turma: "Turma C", professor: "Henrique Barbosa", ativo: true },
-    { nome: "Larissa Melo", unidade: "Unidade Centro", curso: "IoT", turma: "Turma C", professor: "Henrique Barbosa", ativo: false },
-    { nome: "Vinícius Souza", unidade: "Unidade Centro", curso: "IoT", turma: "Turma C", professor: "Henrique Barbosa", ativo: true },
+    { nome: "Paulo Andrade", unidade: "Unidade Centro", curso: "IoT", turma: "Turma A", professor: "Henrique Barbosa", ativo: true },
+    { nome: "Larissa Melo", unidade: "Unidade Centro", curso: "IoT", turma: "Turma A", professor: "Henrique Barbosa", ativo: false },
+    { nome: "Vinícius Souza", unidade: "Unidade Centro", curso: "IoT", turma: "Turma A", professor: "Henrique Barbosa", ativo: true },
 ];
 
 export default dadosAlunos;

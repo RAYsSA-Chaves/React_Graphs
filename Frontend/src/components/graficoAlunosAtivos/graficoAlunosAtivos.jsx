@@ -1,14 +1,14 @@
 import React from "react";
 import { PieChart, Pie, Cell } from "recharts";
 import CustomizedLabel from "../customLabel/customLabel";
-import ExternalLabel from "../customExternaLabel/externalLabel";
+import ExternalLabel from "../customExternalLabel/externalLabel";
 
 function GraficoAlunosAtivos(props) {
     // Dados e filtros selecionados
-    dadosAlunos = props.dadosAlunos
-    unidadeSelecionada = props.unidadeSelecionada
-    cursoSelecionado = props.cursoSelecionado
-    profSelecionado = props.profSelecionado
+    const dadosAlunos = props.dadosAlunos;
+    let unidadeSelecionada = props.unidadeSelecionada;
+    let cursoSelecionado = props.cursoSelecionado;
+    let profSelecionado = props.profSelecionado;
 
     // Guardar somente os alunos ativos
     let alunosAtivos = [];
@@ -31,15 +31,15 @@ function GraficoAlunosAtivos(props) {
 
     // Sem filtros ativos -> agrupa por unidade
     if (unidadeSelecionada === "" && cursoSelecionado === "" && profSelecionado === "") {
-        listaUnidades = [];
+        let listaUnidades = [];
         for (let i = 0; i < alunosAtivos.length; i++) {
             let unidade = alunosAtivos[i].unidade;
             let encontrado = false;
             
             // Pula de primeira
-            for (let j = 0; listaUnidades < 0; j++) {
-                if (listaUnidades[j] === unidade) {
-                    listaUnidades.valor++;
+            for (let j = 0; j < listaUnidades.length; j++) {
+                if (listaUnidades[j].nome === unidade) {
+                    listaUnidades[j].valor++;
                     encontrado = true;
                     break;
                 }
@@ -52,40 +52,17 @@ function GraficoAlunosAtivos(props) {
         dados = listaUnidades;
     }
 
-    // Filtro Unidade ou Professor ativo -> agrupa por curso
-    else if (unidadeSelecionada !== "" || profSelecionado !== "") {
-        listaCursos = [];
-        for (let i = 0; i < alunosAtivos.length; i++) {
-            let curso = alunosAtivos[i].curso;
-            let encontrado = false;
-            
-            // Pula de primeira
-            for (let j = 0; listaCursos < 0; j++) {
-                if (listaCursos[j] === curso) {
-                    listaCursos.valor++;
-                    encontrado = true;
-                    break;
-                }
-            }
-            if (!encontrado) {
-                listaCursos.push({ nome: curso, valor: 1 });
-            }
-        }
-        // Dados finais para passar para o gráfico
-        dados = listaCursos;
-    }
-
     // Filtro Curso ativo -> agrupa por turmas
-    else {
-        listaTurmas = [];
+    else if (unidadeSelecionada !== "" && cursoSelecionado !== "") {
+        let listaTurmas = [];
         for (let i = 0; i < alunosAtivos.length; i++) {
             let turma = alunosAtivos[i].turma;
             let encontrado = false;
             
             // Pula de primeira
-            for (let j = 0; listaTurmas < 0; j++) {
-                if (listaTurmas[j] === turma) {
-                    listaTurmas.valor++;
+            for (let j = 0; j < listaTurmas.length; j++) {
+                if (listaTurmas[j].nome === turma) {
+                    listaTurmas[j].valor++;
                     encontrado = true;
                     break;
                 }
@@ -96,6 +73,29 @@ function GraficoAlunosAtivos(props) {
         }
         // Dados finais para passar para o gráfico
         dados = listaTurmas;
+    }
+
+    // Filtro Unidade ou Professor ativo -> agrupa por curso
+    else if (unidadeSelecionada !== "" || profSelecionado !== "") {
+        let listaCursos = [];
+        for (let i = 0; i < alunosAtivos.length; i++) {
+            let curso = alunosAtivos[i].curso;
+            let encontrado = false;
+            
+            // Pula de primeira
+            for (let j = 0; j < listaCursos.length; j++) {
+                if (listaCursos[j].nome === curso) {
+                    listaCursos[j].valor++;
+                    encontrado = true;
+                    break;
+                }
+            }
+            if (!encontrado) {
+                listaCursos.push({ nome: curso, valor: 1 });
+            }
+        }
+        // Dados finais para passar para o gráfico
+        dados = listaCursos;
     }
 
     // Ativar placeholder customizado para label interno, pois valor mínimom exibido é sempre 1
@@ -115,12 +115,12 @@ function GraficoAlunosAtivos(props) {
                     cx="50%" // coordenada X do centro da fatia
                     cy="50%" // coordenada Y do centro da fatia
                     outerRadius={180} // raio do círculo da pizza
+                    labelLine={false}
                     label={<CustomizedLabel/>}
-                    labelLina={false}
                     pointerEvents="none"
                 >
                     {dados.map(function (_, index) {
-                        return <Cell key={index} fill={cores[inedx % cores.length]}/>
+                        return <Cell key={index} fill={cores[index % cores.length]}/>
                     })}
                 </Pie>
 
@@ -132,8 +132,8 @@ function GraficoAlunosAtivos(props) {
                     cx="50%"
                     cy="50%"
                     outerRadius={180}
+                    labelLine={false}
                     label={<ExternalLabel/>}
-                    labelLina={false}
                     pointerEvents="none"
                     isAnimationActive={false}
                     fill="none"

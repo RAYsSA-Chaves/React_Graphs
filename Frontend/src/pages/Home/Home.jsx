@@ -1,9 +1,9 @@
 import { useState} from "react";
 import GraficoAlunosAtivos from "../../components/graficoAlunosAtivos/graficoAlunosAtivos";
 import GraficoAlunosDesligados from "../../components/graficoAlunosDesligados/graficoAlunosDesligados";
-import FiltroAlunos from "../../components/filtroAlunos";
-import FiltroDesligados from "../../components/filtroDesligados";
-import dadosAlunos from "../../data/dadosAlunos";
+import FiltroAlunos from "../../components/filtroAlunosAtivos/filtroAlunosAtivos";
+import FiltroDesligados from "../../components/filtroAlunosDesligados/filtroAlunosDesligados";
+import dadosAlunos from "../../data/dadosAlunos.js";
 import "./Home.css";
 
 function HomePage() {
@@ -14,6 +14,51 @@ function HomePage() {
     const [cursoSelecionado2, setCursoSelecionado2] = useState("");
     const [profSelecionado, setProfSelecionado] = useState("");
     const [profSelecionado2, setProfSelecionado2] = useState("");
+
+    // Alterar os filtros selecionados (ex: filtrar por professr desseleciona filtro de curso)
+    function filtrarUnidade(filtro) {
+        setUnidadeSelecionada(filtro);
+        if (filtro !== "") {
+            setProfSelecionado(""); 
+        }
+    }
+
+    function filtrarCurso(filtro) {
+        setCursoSelecionado(filtro);
+        if (filtro !== "") {
+            setProfSelecionado(""); 
+        }
+    }
+
+    function filtrarProfessor(filtro) {
+        setProfSelecionado(filtro);
+        if (filtro !== "") {
+            setUnidadeSelecionada(""); 
+            setCursoSelecionado("");  
+        }
+    }
+
+    function filtrarUnidade2(filtro) {
+        setUnidadeSelecionada2(filtro);
+        if (filtro !== "") {
+            setProfSelecionado2(""); 
+        }
+    }
+
+    function filtrarCurso2(filtro) {
+        setCursoSelecionado2(filtro);
+        if (filtro !== "") {
+            setProfSelecionado2(""); 
+        }
+    }
+
+    function filtrarProfessor2(filtro) {
+        setProfSelecionado2(filtro);
+        if (filtro !== "") {
+            setUnidadeSelecionada2(""); 
+            setCursoSelecionado2("");  
+        }
+    }
 
     // Estados dos dropdowns (aberto/fechado)
     const [unidadeAberto, setUnidadeAberto] = useState(false);
@@ -74,11 +119,11 @@ function HomePage() {
 
                     <FiltroAlunos 
                         unidadeSelecionada = {unidadeSelecionada}
-                        setUnidadeSelecionada = {setUnidadeSelecionada}
+                        setUnidadeSelecionada = {filtrarUnidade}
                         cursoSelecionado = {cursoSelecionado}
-                        setCursoSelecionado = {setCursoSelecionado}
+                        setCursoSelecionado = {filtrarCurso}
                         profSelecionado = {profSelecionado}
-                        setProfSelecionado = {setProfSelecionado}
+                        setProfSelecionado = {filtrarProfessor}
                         aberto = {{
                             unidade: unidadeAberto,
                             curso: cursoAberto,
@@ -101,11 +146,11 @@ function HomePage() {
 
                     <FiltroDesligados 
                         unidadeSelecionada2 = {unidadeSelecionada2}
-                        setUnidadeSelecionada2 = {setUnidadeSelecionada2}
+                        setUnidadeSelecionada2 = {filtrarUnidade2}
                         cursoSelecionado2 = {cursoSelecionado2}
-                        setCursoSelecionado2 = {setCursoSelecionado2}
+                        setCursoSelecionado2 = {filtrarCurso2}
                         profSelecionado2 = {profSelecionado2}
-                        setProfSelecionado2 = {setProfSelecionado2}
+                        setProfSelecionado2 = {filtrarProfessor2}
                         aberto = {{
                             unidade: unidade2Aberto,
                             curso: curso2Aberto,

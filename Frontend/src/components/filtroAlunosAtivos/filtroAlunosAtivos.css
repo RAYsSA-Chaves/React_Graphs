@@ -1,0 +1,10 @@
+.filtroCompleto {
+    width: 100%;
+    margin-top: 3rem;
+}
+
+.linhaAbaixo {
+    height: 0.5px;
+    background-color: #000;
+    width: 100%;
+}

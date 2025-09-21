@@ -1,4 +1,4 @@
-import "./botaoFiltrar.css";
+import "./botaoLimpar.css";
 
 function BotaoFiltrar({ onClick, corBotao }) {
     return (
